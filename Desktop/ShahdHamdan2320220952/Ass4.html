@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سيرة ذاتية - هندسة النظم الذكية</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* المهمة 1: ألوان زاهية وخطوط تقنية */
+        body {
+            font-family: 'Cairo', 'Inter', sans-serif;
+            background-color: #f7a6e5; /* خلفية فاتحة ومنعشة */
+            color: #81abb7; /* نص رمادي غامق جداً للقراءة المريحة */
+            line-height: 1.7;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* المهمة 6: حاوية بتصميم عصري (Glassmorphism light) */
+        .cv-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 168, 255, 0.1); /* ظل أزرق خفيف */
+            border: 1px solid #e1e8ed;
+        }
+
+        /* المهمة الثانية: تدرج لوني زاهٍ يوحي بالذكاء الاصطناعي */
+        .cv-header {
+            background: linear-gradient(135deg, #2ecaed 0%, #803ad5 100%);
+            text-align: center;
+            padding: 50px;
+            border-radius: 20px;
+            color: white;
+            margin-bottom: 30px;
+        }
+
+        /* المهمة 7: صورة بروفايل تقنية */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid #ffffff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        /* المهمة 3: مهارات بألوان زاهية (Gradient Chips) */
+        .skills-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .skills-list li {
+            display: inline-block;
+            background: linear-gradient(45deg, #6c5ce7, #a29bfe);
+            color: white;
+            padding: 8px 18px;
+            border-radius: 50px;
+            margin: 6px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            box-shadow: 0 4px 10px rgba(108, 92, 231, 0.2);
+        }
+
+        /* المهمة الرابعة: جدول أنيق وواضح */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 10px;
+            overflow: hidden; /* لضمان ظهور الزوايا المنحنية */
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: right;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background-color: #803ad5;
+            color: white;
+            font-weight: bold;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9fbff;
+        }
+
+        /* المهمة رقم 5: روابط بلون "Cyber Blue" */
+        a {
+            color: #7a09e3;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #6c5ce7;
+            text-decoration: none;
+            border-bottom: 2px solid #6c5ce7;
+        }
+
+        h2 {
+            color: #853ad5;
+            border-right: 5px solid #6c5ce7;
+            padding-right: 15px;
+            margin-top: 40px;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="cv-container">
+    <header class="cv-header">
+        <img src="https://drive.google.com/file/d/16X8VrSoz1fLx-PC_nL8BsDoGJWjMxDxw/view?usp=drivesdk" alt="صورة المهندس" class="profile-img">
+        <h1> شهد ناهض حمدان</h1>
+        <p style="font-size: 1.2rem; opacity: 0.9;">مهندس نظم ذكية وحاسوب | باحث في الذكاء الاصطناعي</p>
+        <div style="margin-top: 15px;">
+            <a href="mailto:student@example.com" style="color: white; border: none;">sh420322927@gmail.com</a> | 
+            <span style="margin: 0 10px;">+970 567 701 278</span> | 
+            <a href="#" style="color: white; border: none;">GitHub</a>
+        </div>
+    </header>
+
+    <section>
+        <h2>نبذة تقنية</h2>
+        <p>طالب هندسة نظم ذكية وحاسوب في جامعة الأقصى، مهتم جداً بتطبيقات تعلم الآلة (Machine Learning) وبنية الشبكات المتقدمة. أسعى لدمج مهارات البرمجة مع المنطق الهندسي لبناء حلول ذكية ومبتكرة.</p>
+    </section>
+
+    <section>
+        <h2>المهارات التقنية</h2>
+        <ul class="skills-list">
+            <li>Python (Data Science)</li>
+            <li>Artificial Intelligence</li>
+            <li>Network Security</li>
+            <li>HTML5 / CSS3</li>
+            <li>JavaScript</li>
+            <li>Git & GitHub</li>
+            <li>Problem Solving</li>
+            <li>Linux Fundamentals</li>
+            <li>Java</li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>المسار الأكاديمي</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>الدرجة العلمية</th>
+                    <th>المؤسسة</th>
+                    <th>الفترة</th>
+                    <th>الحالة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>بكالوريوس هندسة نظم ذكية وحاسوب</td>
+                    <td>جامعة الأقصى</td>
+                    <td>2023 - الآن</td>
+                    <td>قيد الدراسة</td>
+                </tr>
+                <tr>
+                    <td>شهادة الثانوية العامة (علمي)</td>
+                    <td>مدرسة ثانوية</td>
+                    <td>2019 - 2023</td>
+                    <td>مكتمل</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>المشاريع المهتم بها</h2>
+        <ul style="list-style-type: square; color: #636e72;">
+            <li>تطوير خوارزميات ذكية تصنيف البيانات باستخدام Python.</li>
+            <li>محاكاة شبكات الحاسوب وتحليل أمن البيانات.</li>
+            <li>بناء واجهات مستخدم ذكية تدعم تجربة المستخدم (UX).</li>
+            <li>تطوير خوارزمات ذكاء اصطناعي تخدم حاجاتنا</li>
+        </ul>
+    </section>
+
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; border-top: 1px dashed #3a7bd5;">
+        <p>دعنا نتواصل لبناء مستقبل أذكى!</p>
+        <a href="#">LinkedIn</a> • <a href="https://github.com/ShahdNahedHamdan">GitHub</a> • <a href="#">Portfolio</a>
+    </footer>
+</div>
+
+</body>
+</html>
