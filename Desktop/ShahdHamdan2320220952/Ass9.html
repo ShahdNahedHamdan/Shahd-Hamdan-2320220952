@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To-Do List App</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background:#f5f5f5;
+    margin:0;
+    padding:30px;
+}
+
+.container{
+    max-width:600px;
+    margin:auto;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+h1{
+    text-align:center;
+}
+
+p{
+    text-align:center;
+    color:gray;
+}
+
+.input-box{
+    display:flex;
+    gap:10px;
+    margin-bottom:20px;
+}
+
+input{
+    flex:1;
+    padding:10px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.add-btn{
+    background:#b91ce1;
+    color:white;
+}
+
+.filters{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.filters button{
+    margin:5px;
+    background:#ddd;
+}
+
+.active{
+    background:#ba2bea !important;
+    color:white;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    background:#eee;
+    padding:10px;
+    margin-bottom:10px;
+    border-radius:8px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.completed span{
+    text-decoration:line-through;
+    color:gray;
+}
+
+.delete{
+    background:red;
+    color:white;
+}
+
+.footer{
+    display:flex;
+    justify-content:space-between;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>قائمة مهامي</h1>
+<p>حافظ على تنظيمك وإنتاجيتك</p>
+
+<div class="input-box">
+    <input type="text" id="taskInput" placeholder="ما الذي يجب فعله؟">
+    <button class="add-btn" onclick="addTask()">إضافة</button>
+</div>
+
+<div class="filters">
+    <button onclick="filterTasks('all')" class="active">الجميع</button>
+    <button onclick="filterTasks('active')">نشط</button>
+    <button onclick="filterTasks('completed')">مكتمل</button>
+</div>
+
+<ul id="taskList"></ul>
+
+<div class="footer">
+    <span id="count">0 مهام</span>
+    <button onclick="clearCompleted()">مسح المكتمل</button>
+</div>
+
+</div>
+
+<script>
+let tasks = [];
+let currentFilter = "all";
+
+function addTask(){
+    let input = document.getElementById("taskInput");
+    let text = input.value.trim();
+
+    if(text === "") return;
+
+    tasks.push({
+        text:text,
+        completed:false
+    });
+
+    input.value = "";
+    displayTasks();
+}
+
+function displayTasks(){
+    let list = document.getElementById("taskList");
+    list.innerHTML = "";
+
+    let filtered = tasks.filter(task=>{
+        if(currentFilter === "active") return !task.completed;
+        if(currentFilter === "completed") return task.completed;
+        return true;
+    });
+
+    filtered.forEach((task,index)=>{
+        let li = document.createElement("li");
+
+        if(task.completed){
+            li.classList.add("completed");
+        }
+
+        li.innerHTML = `
+            <div>
+                <input type="checkbox" onchange="toggleTask(${index})" ${task.completed ? "checked" : ""}>
+                <span>${task.text}</span>
+            </div>
+            <button class="delete" onclick="deleteTask(${index})">حذف</button>
+        `;
+
+        list.appendChild(li);
+    });
+
+    let remaining = tasks.filter(task => !task.completed).length;
+    document.getElementById("count").innerText = remaining + " مهام متبقية";
+}
+
+function toggleTask(index){
+    tasks[index].completed = !tasks[index].completed;
+    displayTasks();
+}
+
+function deleteTask(index){
+    tasks.splice(index,1);
+    displayTasks();
+}
+
+function filterTasks(type){
+    currentFilter = type;
+
+    let buttons = document.querySelectorAll(".filters button");
+    buttons.forEach(btn => btn.classList.remove("active"));
+
+    event.target.classList.add("active");
+
+    displayTasks();
+}
+
+function clearCompleted(){
+    tasks = tasks.filter(task => !task.completed);
+    displayTasks();
+}
+</script>
+
+</body>
+</html>
